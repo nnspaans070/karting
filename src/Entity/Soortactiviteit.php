@@ -76,7 +76,7 @@ class Soortactiviteit
      *
      * @param string $naam
      *
-     * @return soortactiviteiten
+     * @return soortactiviteit
      */
     public function setNaam($naam)
     {
@@ -100,7 +100,7 @@ class Soortactiviteit
      *
      * @param integer $minLeeftijd
      *
-     * @return soortactiviteiten
+     * @return soortactiviteit
      */
     public function setMinLeeftijd($minLeeftijd)
     {
@@ -124,7 +124,7 @@ class Soortactiviteit
      *
      * @param integer $tijdsduur
      *
-     * @return soortactiviteiten
+     * @return soortactiviteit
      */
     public function setTijdsduur($tijdsduur)
     {
@@ -148,7 +148,7 @@ class Soortactiviteit
      *
      * @param string $prijs
      *
-     * @return soortactiviteiten
+     * @return soortactiviteit
      */
     public function setPrijs($prijs)
     {
