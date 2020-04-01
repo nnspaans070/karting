@@ -22,7 +22,6 @@ class BezoekerController extends AbstractController
      */
     public function indexAction()
     {
-
         return $this->render('bezoeker/index.html.twig',array('boodschap'=>'Welkom'));
     }
 
@@ -32,8 +31,9 @@ class BezoekerController extends AbstractController
     public function kartactiviteitenAction()
     {
         $repository=$this->getDoctrine()->getRepository(Soortactiviteit::class);
+        $activiteiten=$this->getDoctrine()->getRepository('App:Activiteit')->findAll();
         $soortactiviteiten=$repository->findAll();
-        return $this->render('bezoeker/kartactiviteiten.html.twig',array('boodschap'=>'Welkom','soortactiviteiten'=>$soortactiviteiten));
+        return $this->render('bezoeker/kartactiviteiten.html.twig',array('boodschap'=>'Welkom','soortactiviteiten'=>$soortactiviteiten, 'activiteiten'=> $activiteiten));
     }
 
     /**

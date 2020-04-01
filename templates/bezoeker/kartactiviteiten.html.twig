@@ -14,6 +14,36 @@
                 <li class="list-group-item text-primary">{{ activiteit.naam }}</li>
                 {% endfor %}
             </ul>
+                <table class="table" style="table-layout: fixed">
+                    <h3>Dit zijn alle activiteiten van het kartcentrum</h3>
+                        <thead>
+                            <tr>
+                                <td>datum</td>
+                                <td>tijd</td>
+                                <td>soort activiteit</td>
+                                <td>deelnemers</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for activiteit in activiteiten %}
+                            <tr>
+                                <td>
+                                    {{ activiteit.datum|date("d-m-Y")}}
+                                </td>
+                                <td>
+                                    {{ activiteit.tijd|date("H:i")}}
+                                </td>
+
+                                <td>
+                                    {{ activiteit.soort.naam}}
+                                </td>
+                                <td>
+                                    {{ activiteit.users|length}}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                <br />
             <p>
                 Let op, voor het karten zijn dichte schoenen verplicht.
                 Karten met een korte broek is niet toegestaan. Wij hebben overalls ter beschikking,

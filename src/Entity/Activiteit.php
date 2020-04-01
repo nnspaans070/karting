@@ -56,6 +56,11 @@ class Activiteit
 
     private $users;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $maxDeelnemers;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
@@ -133,6 +138,18 @@ class Activiteit
     public function setSoort($soort)
     {
         $this->soort=$soort;
+    }
+
+    public function getMaxDeelnemers(): ?int
+    {
+        return $this->maxDeelnemers;
+    }
+
+    public function setMaxDeelnemers(int $maxDeelnemers): self
+    {
+        $this->maxDeelnemers = $maxDeelnemers;
+
+        return $this;
     }
 }
 
